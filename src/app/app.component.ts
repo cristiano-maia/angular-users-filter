@@ -8,5 +8,12 @@ import { IUser } from './interfaces/user/user.interface';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-userSelected: IUser = UsersList[0];
+userSelected: IUser = {} as IUser;
+showUserDetails: boolean  = false;
+
+  onUserSelected(user: IUser) {
+    console.log(user);
+    this.userSelected = user;
+    this.showUserDetails = true;
+  }
 }
